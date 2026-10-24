@@ -1,0 +1,57 @@
+[codex]
+binary = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
+thread = ""
+auto_detect_thread = true
+auto_resume = true
+resume_message = "Resume the interrupted task from its last progress. Review completed and remaining work, avoid repeating completed steps, and continue the remaining implementation and validation."
+resume_scan_limit = 30
+resume_lookback_hours = 24
+app_server_timeout_seconds = 30
+resume_timeout_seconds = 60
+
+[discord]
+application_id = 0
+guild_id = 0
+channel_id = 0
+owner_user_id = 0
+mention_user_id = 0
+token_env = "DISCORD_BOT_TOKEN"
+keychain_service = "CodexPulseDiscord"
+keychain_account = "bot-token"
+alert_delete_seconds = 90
+command_delete_seconds = 180
+pin_status_message = false
+
+[monitor]
+poll_seconds = 300
+history_days = 90
+forecast_thresholds_minutes = [30, 15, 5]
+anomaly_multiplier = 1.75
+anomaly_min_rate = 0.10
+minimum_rate = 0.01
+timezone = "Asia/Tokyo"
+cpu_alert_percent = 90
+cpu_recovery_percent = 75
+memory_alert_percent = 90
+memory_recovery_percent = 80
+battery_alert_percent = 15
+battery_recovery_percent = 25
+resource_alert_consecutive_samples = 2
+
+[analytics]
+enabled = true
+sessions_dir = "~/.codex/sessions"
+backfill_days = 14
+minimum_profile_samples = 3
+weekly_digest_enabled = true
+weekly_digest_weekday = 0
+weekly_digest_hour = 9
+weekly_digest_mention = false
+
+[storage]
+database = "data/usage.sqlite3"
+maintenance_interval_hours = 24
+resumed_queue_days = 30
+log_path = "~/Library/Logs/CodexPulse.log"
+log_max_bytes = 5242880
+log_backup_count = 3

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "codex-pulse"
+version = "3.11.0"
+description = "macOS Discord bot for monitoring Codex usage, forecasting limits, and safely resuming rate-limited tasks"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.13,<3.15"
+dependencies = [
+  "discord.py>=2.6,<3",
+]
+
+[project.urls]
+Repository = "https://github.com/n3dypop/CodexPulse"
+Issues = "https://github.com/n3dypop/CodexPulse/issues"
+
+[project.scripts]
+codex-pulse = "codex_pulse.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/codex_pulse"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/LICENSE",
+  "/README.md",
+  "/config.example.toml",
+  "/src",
+]
